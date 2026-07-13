@@ -5,9 +5,9 @@ export default function DarkCta() {
         <div className="dark-panel rv-zoom">
           <h2>Every conversation, within reach.</h2>
           <p className="dark-panel__sub">
-            A research project by Prof. Chander Shekhar Singh, Department of
-            Linguistics, Rajdhani College, University of Delhi — free while the
-            research beta runs.
+            A research project by <strong>Prof. Chander Shekhar Singh</strong>,
+            Department of Linguistics, Rajdhani College, University of Delhi — free
+            while the research beta runs.
           </p>
           <div className="dl-stats">
             <div className="dl-stat">

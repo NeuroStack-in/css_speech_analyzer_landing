@@ -28,14 +28,54 @@ export default function Effects() {
     return () => revealer.disconnect();
   }, [pathname]);
 
-  /* animated FAQ open/close (WAAPI height animation on <details>) */
+  /* FAQ accordion: animated open/close, only one item open at a time */
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const items = Array.from(document.querySelectorAll<HTMLDetailsElement>("details.faq"));
     if (items.length === 0) return;
 
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const busy = new WeakSet<HTMLDetailsElement>();
     const handlers: Array<{ el: HTMLElement; fn: (e: Event) => void }> = [];
+    const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
+
+    const closeItem = (d: HTMLDetailsElement) => {
+      const summary = d.querySelector<HTMLElement>("summary");
+      if (!summary || !d.open || busy.has(d)) return;
+      if (reduced) {
+        d.open = false;
+        return;
+      }
+      busy.add(d);
+      const anim = d.animate(
+        { height: [`${d.offsetHeight}px`, `${summary.offsetHeight}px`] },
+        { duration: 320, easing: EASE }
+      );
+      anim.onfinish = () => {
+        d.open = false;
+        d.style.height = "";
+        busy.delete(d);
+      };
+    };
+
+    const openItem = (d: HTMLDetailsElement) => {
+      const summary = d.querySelector<HTMLElement>("summary");
+      if (!summary || busy.has(d)) return;
+      if (reduced) {
+        d.open = true;
+        return;
+      }
+      busy.add(d);
+      const closedH = summary.offsetHeight;
+      d.open = true;
+      const anim = d.animate(
+        { height: [`${closedH}px`, `${d.offsetHeight}px`] },
+        { duration: 360, easing: EASE }
+      );
+      anim.onfinish = () => {
+        d.style.height = "";
+        busy.delete(d);
+      };
+    };
 
     items.forEach((d) => {
       const summary = d.querySelector<HTMLElement>("summary");
@@ -45,31 +85,13 @@ export default function Effects() {
       const fn = (e: Event) => {
         e.preventDefault();
         if (busy.has(d)) return;
-        busy.add(d);
-        const closedH = summary.offsetHeight;
-
         if (d.open) {
-          const fullH = d.offsetHeight;
-          const anim = d.animate(
-            { height: [`${fullH}px`, `${closedH}px`] },
-            { duration: 320, easing: "cubic-bezier(0.22, 1, 0.36, 1)" }
-          );
-          anim.onfinish = () => {
-            d.open = false;
-            d.style.height = "";
-            busy.delete(d);
-          };
+          closeItem(d);
         } else {
-          d.open = true;
-          const fullH = d.offsetHeight;
-          const anim = d.animate(
-            { height: [`${closedH}px`, `${fullH}px`] },
-            { duration: 360, easing: "cubic-bezier(0.22, 1, 0.36, 1)" }
-          );
-          anim.onfinish = () => {
-            d.style.height = "";
-            busy.delete(d);
-          };
+          items.forEach((other) => {
+            if (other !== d) closeItem(other);
+          });
+          openItem(d);
         }
       };
       summary.addEventListener("click", fn);

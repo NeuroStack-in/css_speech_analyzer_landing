@@ -45,8 +45,8 @@ export default function Footer() {
             <Link href="/terms">Terms of Use</Link>
           </div>
           <p className="footer__credit">
-            Project owner: Prof. Chander Shekhar Singh, Department of Linguistics,
-            Rajdhani College, University of Delhi.
+            Project owner: <strong>Prof. Chander Shekhar Singh</strong>, Department of
+            Linguistics, Rajdhani College, University of Delhi.
           </p>
         </div>
       </div>

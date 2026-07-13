@@ -37,7 +37,18 @@ export default function Faq() {
               <details className="faq" open={i === 0} key={item.q}>
                 <summary>
                   {item.q}
-                  <span className="faq__icon" aria-hidden="true" />
+                  <span className="faq__icon" aria-hidden="true">
+                    <svg viewBox="0 0 20 20">
+                      <path
+                        d="M5 7.5l5 5 5-5"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
                 </summary>
                 <p>{item.a}</p>
               </details>
