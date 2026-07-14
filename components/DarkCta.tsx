@@ -15,7 +15,7 @@ export default function DarkCta() {
           <div className="dl-stats">
             <div className="dl-stat">
               <span>Version</span>
-              <strong>1.0.0-beta</strong>
+              <strong>1.0.0</strong>
             </div>
             <div className="dl-stat">
               <span>OS support</span>
