@@ -1,3 +1,11 @@
+// The APK is too large for git/static hosting, so it lives in a private S3 bucket
+// served through CloudFront. Override at build time with NEXT_PUBLIC_APK_URL.
+// One-click download relies on the object's Content-Disposition/Content-Type
+// headers (set at upload) — see the README.
+const APK_URL =
+  process.env.NEXT_PUBLIC_APK_URL ??
+  "https://drl8ps0dvbw08.cloudfront.net/CSS-Speech-Analyzer-v1.0.0-beta.apk";
+
 export default function DarkCta() {
   return (
     <section className="cta-section" id="download">
@@ -20,7 +28,7 @@ export default function DarkCta() {
           </div>
           <a
             className="btn btn--light btn--lg"
-            href="/css-speech-generator-v1.0.0-beta.apk"
+            href={APK_URL}
             download
           >
             <svg viewBox="0 0 20 20" aria-hidden="true">
