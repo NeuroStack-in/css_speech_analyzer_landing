@@ -56,7 +56,7 @@ export default function HowItWorks() {
         <div className="step-row step-row--flip">
           <div className="step-copy rv-left">
             <span className="step-num">2</span>
-            <h3>Four algorithms go to work.</h3>
+            <h3>Processed by a four-stage speech pipeline.</h3>
             <p>
               MFCC features model how humans hear. A BiLSTM reads the sentence forwards
               and backwards. A distilled Vosk model decodes the words, and text
@@ -109,7 +109,7 @@ export default function HowItWorks() {
           </div>
           <div className="step-copy rv-right">
             <span className="step-num">3</span>
-            <h3>Read everything you&apos;d otherwise miss.</h3>
+            <h3>Accurate captions, delivered in real time.</h3>
             <p>
               Captions stream word by word, with loudness and pitch beside them. Offline
               by default — and when you&apos;re online, cloud servers quietly boost accuracy

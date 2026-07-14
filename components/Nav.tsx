@@ -16,34 +16,13 @@ const LINKS: { id: (typeof SPY_SECTIONS)[number]; label: string }[] = [
 export default function Nav() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const [progress, setProgress] = useState(0);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
-    let lastY = window.scrollY;
-    let ticking = false;
-    const update = () => {
-      const y = window.scrollY;
-      setScrolled(y > 24);
-      // hide on scroll down, reveal on scroll up
-      if (Math.abs(y - lastY) > 6) {
-        setHidden(y > lastY && y > 140);
-        lastY = y;
-      }
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(max > 0 ? Math.min(1, y / max) : 0);
-      ticking = false;
-    };
-    const onScroll = () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(update);
-      }
-    };
+    const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", onScroll, { passive: true });
-    update();
+    onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -72,14 +51,9 @@ export default function Nav() {
   return (
     <header
       className={`nav${scrolled || pathname !== "/" ? " is-scrolled" : ""}${
-        hidden && !open ? " is-hidden" : ""
-      }${pathname === "/" && !scrolled ? " nav--dark" : ""}`}
+        pathname === "/" && !scrolled ? " nav--dark" : ""
+      }`}
     >
-      <span
-        className="nav__progress"
-        style={{ transform: `scaleX(${progress})` }}
-        aria-hidden="true"
-      />
       <div className="container nav__inner">
         <Logo />
 
