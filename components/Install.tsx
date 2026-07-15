@@ -46,7 +46,7 @@ export default function Install() {
               </li>
               <li>
                 Or open the shared <strong>Google Drive</strong> link and locate the{" "}
-                <strong>CSS Speech Generator</strong> APK.
+                <strong>CSS Speech Analyzer</strong> APK.
               </li>
               <li>
                 Tap the <strong>three dots (⋮)</strong> next to the file and select{" "}

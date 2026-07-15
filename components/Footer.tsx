@@ -21,7 +21,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>© 2026 CSS Speech Generator. All rights reserved.</p>
+          <p>© 2026 CSS Speech Analyzer. All rights reserved.</p>
           <div className="footer__legal">
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Use</Link>

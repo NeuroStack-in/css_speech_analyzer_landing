@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — CSS Speech Generator",
+  title: "Terms of Use — CSS Speech Analyzer",
   description:
-    "Terms of use for CSS Speech Generator — a free research-beta speech captioning app for Deaf and hard-of-hearing users.",
+    "Terms of use for CSS Speech Analyzer — a free research-beta speech captioning app for Deaf and hard-of-hearing users.",
 };
 
 export default function TermsPage() {
@@ -16,7 +16,7 @@ export default function TermsPage() {
         <span className="legal__updated mono">LAST UPDATED · JULY 2026</span>
 
         <p>
-          By downloading or using CSS Speech Generator (&quot;the application&quot;), you agree to the
+          By downloading or using CSS Speech Analyzer (&quot;the application&quot;), you agree to the
           following terms.
         </p>
 

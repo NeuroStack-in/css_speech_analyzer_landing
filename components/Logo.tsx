@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Logo() {
   return (
-    <Link className="logo" href="/" aria-label="CSS Speech Generator — home">
+    <Link className="logo" href="/" aria-label="CSS Speech Analyzer — home">
       <svg className="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
         <defs>
           <linearGradient id="lgmark" x1="0" y1="0" x2="0.6" y2="1">
@@ -19,7 +19,7 @@ export default function Logo() {
         />
       </svg>
       <span className="logo__word">
-        CSS <em>Speech Generator</em>
+        CSS <em>Speech Analyzer</em>
       </span>
     </Link>
   );

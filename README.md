@@ -1,6 +1,6 @@
-# CSS Speech Generator — Landing Page
+# CSS Speech Analyzer — Landing Page
 
-Marketing site for **CSS Speech Generator**, a mobile ASR app that gives Deaf and hard-of-hearing
+Marketing site for **CSS Speech Analyzer**, a mobile ASR app that gives Deaf and hard-of-hearing
 users live captions with speech intensity and pitch analysis. Project owner:
 Prof. Chander Shekhar Singh, Department of Linguistics, Rajdhani College,
 University of Delhi.

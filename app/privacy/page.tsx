@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — CSS Speech Generator",
+  title: "Privacy Policy — CSS Speech Analyzer",
   description:
-    "Privacy policy for CSS Speech Generator. Speech recognition runs on-device by default; optional cloud assist is encrypted and off by default.",
+    "Privacy policy for CSS Speech Analyzer. Speech recognition runs on-device by default; optional cloud assist is encrypted and off by default.",
 };
 
 export default function PrivacyPage() {
@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         <span className="legal__updated mono">LAST UPDATED · JULY 2026</span>
 
         <p>
-          CSS Speech Generator was designed around a simple principle: your voice is your data. This
+          CSS Speech Analyzer was designed around a simple principle: your voice is your data. This
           policy explains what the application does — and deliberately does not do — with
           the information it touches.
         </p>

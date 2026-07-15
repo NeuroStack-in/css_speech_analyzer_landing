@@ -20,11 +20,11 @@ const robotoFlex = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-  title: "CSS Speech Generator — Every Conversation, Made Visible | ASR for Deaf & Hard-of-Hearing Users",
+  title: "CSS Speech Analyzer — Every Conversation, Made Visible | ASR for Deaf & Hard-of-Hearing Users",
   description:
-    "CSS Speech Generator turns speech into live captions with intensity and pitch you can watch — built for Deaf and hard-of-hearing users. A distilled Vosk model runs on-device, backed by cloud servers. MFCC · BiLSTM · text normalization. A research project by Prof. Chander Shekhar Singh, Rajdhani College, University of Delhi.",
+    "CSS Speech Analyzer turns speech into live captions with intensity and pitch you can watch — built for Deaf and hard-of-hearing users. A distilled Vosk model runs on-device, backed by cloud servers. MFCC · BiLSTM · text normalization. A research project by Prof. Chander Shekhar Singh, Rajdhani College, University of Delhi.",
   openGraph: {
-    title: "CSS Speech Generator — Every Conversation, Made Visible",
+    title: "CSS Speech Analyzer — Every Conversation, Made Visible",
     description:
       "Live captions, speech intensity, and pitch analysis for Deaf and hard-of-hearing users. Distilled Vosk ASR on-device, cloud-assisted.",
     type: "website",

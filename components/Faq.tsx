@@ -1,7 +1,7 @@
 const QA = [
   {
-    q: "What is CSS Speech Generator?",
-    a: "CSS Speech Generator is a mobile app that turns speech into live captions, with speech intensity and pitch shown alongside the words. It's built first for Deaf and hard-of-hearing users, and it's equally useful in loud workshops, lectures, and anywhere hearing speech is hard.",
+    q: "What is CSS Speech Analyzer?",
+    a: "CSS Speech Analyzer is a mobile app that turns speech into live captions, with speech intensity and pitch shown alongside the words. It's built first for Deaf and hard-of-hearing users, and it's equally useful in loud workshops, lectures, and anywhere hearing speech is hard.",
   },
   {
     q: "Does it work without internet?",
@@ -17,7 +17,7 @@ const QA = [
   },
   {
     q: "Is the app free?",
-    a: "Yes — CSS Speech Generator is a research project by Prof. Chander Shekhar Singh (Department of Linguistics, Rajdhani College, University of Delhi), and the app is free for the duration of the research beta. Using it (and sharing feedback) directly supports accessibility research.",
+    a: "Yes — CSS Speech Analyzer is a research project by Prof. Chander Shekhar Singh (Department of Linguistics, Rajdhani College, University of Delhi), and the app is free for the duration of the research beta. Using it (and sharing feedback) directly supports accessibility research.",
   },
 ];
 
